@@ -64,7 +64,11 @@ model.compile(optimizer='adam',
               loss='categorical_crossentropy',
               metrics=['acc']);
 
-model.fit(x_train_scaler, y_train_cate, epochs=10, validation_data=(x_vali_scaler, y_vali_cate), verbose=0);
+model.fit(x_train_scaler, y_train_cate,
+          epochs=10,
+          batch_size=128,
+          validation_data=(x_vali_scaler, y_vali_cate),
+          verbose=0);
 
 print(model.evaluate(x_test_scaler,y_test_cate));
 
